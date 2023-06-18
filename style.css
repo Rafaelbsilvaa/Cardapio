@@ -6,13 +6,14 @@
     list-style: 0;
     border: none;
     text-decoration: none;
-    font-family: 'Merriweather', serif;
+    
 }
 
 html{
     width: 100vw;
     height: 100vh;
     font-size: 62.5%;
+    font-family: 'Merriweather', serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -26,7 +27,6 @@ html{
     justify-content: flex-start;
     align-items: center;
     background-color: #1a191a;
-    position: fixed;
     padding-left: 30rem;
 }
 
@@ -35,7 +35,7 @@ html{
     height: auto;
     cursor:pointer;
     display: flex;
-    align-items: flex-end;
+    align-items:flex-end;
 
 }
 
@@ -53,7 +53,7 @@ html{
     width: 600px;
     display:flex;
     align-items:flex-start;
-    justify-content: center;
+    justify-content:center;
     list-style-type: none;
     
 }
@@ -64,6 +64,7 @@ html{
     padding-left: 1rem;
     padding-right: 1rem; 
     color: white;
+    font-size: 1.8rem;
     text-transform: uppercase;
     font-weight: 500;
     transition: all 200ms ease-in;
@@ -93,8 +94,8 @@ html{
 }
 
 .cardapio h2{
-    font-size: 250px;
-    color: #cec5c5;
+    font-size: 5rem;
+    color: #1620accc;
     text-transform: uppercase;
 }
 
@@ -132,7 +133,9 @@ html{
     font-size: 1.4rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
+    display: grid;
     justify-content: center;
+    align-items: center;
     margin-left: 6rem;
 }
 
@@ -142,7 +145,7 @@ html{
 
 .itens img{
     width: 100%;
-    height: 190px;
+    height: 200px;
 }
 
 footer img {
@@ -158,4 +161,83 @@ footer {
 footer a {
     margin: 20px;
     text-align: center;
+}
+
+@media (max-width: 900px) {
+    html{
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 870px) {
+    .content{
+        justify-content: space-between;
+        padding: 0px 40px;
+    }
+    .content .menu{
+        display:none;
+    }
+
+    .one,
+    .two,
+    .three{
+        width: 100%;
+        height: 4px;
+        background-color: white;
+        margin: 6px auto;
+
+        transition-duration: 0.5s;
+    }
+
+    .menu-toggle{
+        width: 40px;
+        height: 30px;
+    }
+
+    .content.on{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #1f1e1f;
+        z-index:10;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content.on .logo{
+        display: none;
+    }
+
+    .content.on .menu-toggle{
+        position: absolute;
+        right: 40px;
+        top: 20px
+    }
+
+    .content.on .menu{
+        display: block;
+    }
+
+    .content.on .menu li{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content.on .menu li a{
+        font-size: 4rem;
+        display: block;
+    }
+
+    .content.on .menu-toggle .one{
+        transform: rotate(45deg) translate(8px, -7px);
+    }
+    .content.on .menu-toggle .three{
+        transform: rotate(-45deg) translate(20px, -6px);
+    }
+
 }
